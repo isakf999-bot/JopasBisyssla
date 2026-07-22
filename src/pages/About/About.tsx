@@ -45,9 +45,9 @@ export default function About() {
         <div className="container about__story">
           <Reveal variant="left">
             <Media
-              src="/images/biodlare-portratt.jpg"
-              alt="Biodlaren vid kuporna en tidig morgon"
-              label="Porträtt · vid kuporna"
+              src="/images/photos/photo-24.png"
+              alt="Biodlaren inspekterar en ram med bin vid kuporna i trädgården"
+              label="Vid kuporna"
               ratio="4/5"
               rounded="lg"
             />
@@ -133,18 +133,18 @@ export default function About() {
         <div className="container about__gallery">
           <Reveal variant="up">
             <Media
-              src="/images/ram-med-honung.jpg"
-              alt="Ram full av gyllene honung lyfts ur kupan"
-              label="Ram ur kupan"
+              src="/images/photos/photo-30.png"
+              alt="Ett bisamhälle klänger tätt samlat vid kupan"
+              label="Ett samhälle samlas"
               ratio="1/1"
               rounded="lg"
             />
           </Reveal>
           <Reveal variant="up" delay={120}>
             <Media
-              src="/images/blommor-anga.jpg"
-              alt="Blommande äng där bina samlar nektar"
-              label="Blommande äng"
+              src="/images/photos/photo-31.png"
+              alt="Bigårdens kupor står uppradade på Söderåsens sluttningar"
+              label="Bigården på åsen"
               ratio="1/1"
               rounded="lg"
             />

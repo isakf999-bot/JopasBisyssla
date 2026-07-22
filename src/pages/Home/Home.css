@@ -244,7 +244,7 @@
   }
   .hero__media {
     margin-inline: auto 0;
-    margin-top: var(--space-5);
+    margin-top: var(--space-8);
   }
 }
 

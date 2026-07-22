@@ -1,4 +1,5 @@
 import Button from "../../components/Button/Button";
+import Media from "../../components/Media/Media";
 import Reveal from "../../components/Reveal/Reveal";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
@@ -44,6 +45,40 @@ export default function Retailers() {
                 </article>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gårdsförsäljning / självservering */}
+      <section className="section retailers__farm-section">
+        <div className="container retailers__farm">
+          <Reveal variant="left" className="retailers__farm-media">
+            <Media
+              src="/images/photos/photo-27.png"
+              alt="Rött honungsskåp vid vägen där honung säljs med Swish från egen bigård"
+              label="Självservering vid gården"
+              ratio="4/5"
+              rounded="lg"
+            />
+          </Reveal>
+          <div className="retailers__farm-copy">
+            <SectionHeading
+              eyebrow="Dygnet runt"
+              title="Honung säljes – direkt från bigården"
+              description="Vid gården står vårt lilla honungsskåp framme. Öppna luckan, ta en burk och betala enkelt med Swish. Färsk honung precis där bina flyger, när det passar dig."
+            />
+            <Reveal variant="up" delay={140}>
+              <ul className="retailers__farm-points">
+                <li>Öppet när du är förbi – ingen kassa, ingen kö</li>
+                <li>Betala smidigt med Swish direkt i skåpet</li>
+                <li>Honung från egen bigård, säsong för säsong</li>
+              </ul>
+            </Reveal>
+            <Reveal variant="up" delay={200}>
+              <Button to="/kontakt" variant="ghost">
+                Fråga efter vägbeskrivning
+              </Button>
+            </Reveal>
           </div>
         </div>
       </section>

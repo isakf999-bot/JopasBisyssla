@@ -60,6 +60,47 @@
   }
 }
 
+/* Gårdsförsäljning / självservering */
+.retailers__farm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+.retailers__farm-media {
+  max-width: 420px;
+}
+.retailers__farm-points {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+.retailers__farm-points li {
+  position: relative;
+  padding-left: var(--space-5);
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+}
+.retailers__farm-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--grad-honey);
+  box-shadow: 0 0 0 4px rgba(236, 200, 74, 0.16);
+}
+
+@media (min-width: 860px) {
+  .retailers__farm {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: var(--space-8);
+  }
+}
+
 /* Marknader */
 .retailers__markets-section {
   background: var(--bg-elevated);

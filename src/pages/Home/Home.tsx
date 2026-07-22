@@ -142,9 +142,9 @@ export default function Home() {
         <div className="container about-strip__grid">
           <Reveal variant="left">
             <Media
-              src="/images/bikupor-sommar.jpg"
-              alt="Bikupor i sommarlandskap på Söderåsen"
-              label="Bikupor på åsen"
+              src="/images/photos/photo-29.png"
+              alt="Jonatan och Patricia vid marknadsståndet framför gården"
+              label="Jonatan & Patricia"
               ratio="4/3"
               rounded="lg"
             />

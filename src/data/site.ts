@@ -47,6 +47,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Årets första skörd med inslag av raps och tidiga vårblommor. Krämig konsistens och en rund, mild sötma som passar lika bra på mackan som i teet.",
     notes: ["Ljus färg", "Krämig", "Mild raps"],
+    image: "/images/photos/photo-21.png",
   },
   {
     id: "sommar",
@@ -56,6 +57,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Slungad när sommarängarna står i full blom. Klöver, lind och vilda örter ger en djupare, gyllene honung med tydlig karaktär.",
     notes: ["Gyllene", "Fyllig", "Blomsteräng"],
+    image: "/images/photos/photo-09.png",
   },
   {
     id: "ljunghonung",
@@ -65,6 +67,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Vår mest karaktärsfulla honung, samlad från ljungen på åsens hedar. Mörk, nästan geléaktig med en kryddig, lätt beska. Fås i begränsad mängd.",
     notes: ["Mörk", "Kryddig", "Begränsad"],
+    image: "/images/photos/photo-04.png",
   },
 ];
 
