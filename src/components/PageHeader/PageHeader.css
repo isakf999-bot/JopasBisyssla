@@ -1,0 +1,40 @@
+.page-header {
+  position: relative;
+  padding-top: calc(var(--nav-h) + var(--space-7));
+  padding-bottom: var(--space-6);
+  overflow: hidden;
+}
+.page-header__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--grad-warm);
+}
+.page-header__bg::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -8%;
+  width: 46vw;
+  height: 46vw;
+  max-width: 560px;
+  max-height: 560px;
+  background: radial-gradient(
+    circle,
+    rgba(242, 198, 97, 0.34) 0%,
+    rgba(242, 198, 97, 0) 66%
+  );
+}
+
+.page-header__inner {
+  max-width: 760px;
+}
+.page-header__title {
+  font-size: var(--fs-4xl);
+  font-weight: 500;
+  margin-top: var(--space-3);
+}
+.page-header__intro {
+  margin-top: var(--space-4);
+  max-width: 58ch;
+}

@@ -1,0 +1,115 @@
+.footer {
+  position: relative;
+  margin-top: var(--space-8);
+  background: var(--grad-dark);
+  color: var(--text-on-dark);
+  overflow: hidden;
+}
+
+.footer__glow {
+  position: absolute;
+  top: -160px;
+  right: -120px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(
+    circle,
+    rgba(230, 165, 42, 0.28) 0%,
+    rgba(230, 165, 42, 0) 68%
+  );
+  pointer-events: none;
+}
+
+.footer__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-6);
+}
+
+.footer__tagline {
+  margin-top: var(--space-4);
+  max-width: 36ch;
+  color: rgba(243, 236, 214, 0.72);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+}
+
+.footer__socials {
+  margin-top: var(--space-4);
+}
+
+.footer__heading {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-honey-soft);
+  margin-bottom: var(--space-3);
+}
+
+.footer__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer__link {
+  color: rgba(243, 236, 214, 0.82);
+  font-size: var(--fs-sm);
+  transition: color var(--dur) var(--ease-out),
+    padding-left var(--dur) var(--ease-out);
+}
+.footer__link:hover {
+  color: var(--text-on-dark);
+  padding-left: 5px;
+}
+.footer__muted {
+  color: rgba(243, 236, 214, 0.5);
+  font-size: var(--fs-sm);
+}
+
+.footer__bottom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-block: var(--space-4);
+  border-top: 1px solid rgba(243, 236, 214, 0.12);
+  font-size: var(--fs-xs);
+  color: rgba(243, 236, 214, 0.55);
+}
+.footer__made {
+  color: var(--color-honey-soft);
+  letter-spacing: 0.04em;
+}
+
+.footer__credit {
+  color: var(--color-honey-soft);
+  font-weight: 600;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out);
+}
+.footer__credit:hover {
+  color: var(--text-on-dark);
+  border-bottom-color: var(--color-honey);
+}
+
+@media (min-width: 640px) {
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 860px) {
+  .footer__inner {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-7);
+  }
+}

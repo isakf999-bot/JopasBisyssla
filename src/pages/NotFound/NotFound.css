@@ -1,0 +1,36 @@
+.notfound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 78vh;
+  padding-top: var(--nav-h);
+  background: var(--grad-warm);
+}
+.notfound__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  max-width: 540px;
+}
+.notfound__logo {
+  margin-bottom: var(--space-2);
+}
+.notfound__logo .logo__img {
+  height: 110px;
+}
+.notfound__logo .logo__emblem {
+  width: 90px;
+  height: 90px;
+}
+.notfound__title {
+  font-size: var(--fs-3xl);
+}
+.notfound__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+  margin-top: var(--space-4);
+}

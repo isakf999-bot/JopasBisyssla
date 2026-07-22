@@ -1,0 +1,195 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  transition: background var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out), backdrop-filter var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out);
+  border-bottom: 1px solid transparent;
+}
+
+.nav--scrolled {
+  background: rgba(251, 247, 236, 0.82);
+  backdrop-filter: blur(16px) saturate(1.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  box-shadow: var(--shadow-sm);
+  border-bottom-color: var(--border-subtle);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.nav__brand {
+  margin-right: auto;
+}
+
+/* --- Desktop-länkar --- */
+.nav__links {
+  display: none;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.nav__link {
+  position: relative;
+  padding: 0.5rem 0.95rem;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: var(--radius-pill);
+  transition: color var(--dur) var(--ease-out),
+    background var(--dur) var(--ease-out);
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 0;
+  height: 2px;
+  background: var(--color-honey);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width var(--dur) var(--ease-out);
+}
+
+.nav__link:hover {
+  color: var(--text-primary);
+}
+.nav__link:hover::after {
+  width: 16px;
+}
+
+.nav__link.is-active {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.nav__link.is-active::after {
+  width: 20px;
+}
+
+/* --- Burger --- */
+.nav__burger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0 10px;
+  border-radius: var(--radius-sm);
+  z-index: 120;
+}
+.nav__burger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform var(--dur) var(--ease-out),
+    opacity var(--dur) var(--ease-out);
+}
+.nav__burger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav__burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.nav__burger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Mobilmeny (overlay) --- */
+.nav__mobile {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  z-index: 110;
+  background: var(--grad-dark);
+  padding: calc(var(--nav-h) + var(--space-5)) clamp(1.5rem, 6vw, 3rem)
+    var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform var(--dur-slow) var(--ease-out),
+    opacity var(--dur-slow) var(--ease-out), visibility var(--dur-slow);
+}
+.nav__mobile.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav__mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: var(--space-4);
+}
+
+.nav__mobile-link {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 9vw, 3rem);
+  font-weight: 500;
+  color: var(--text-on-dark);
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(243, 236, 214, 0.12);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out), color var(--dur) var(--ease-out);
+}
+.nav__mobile.is-open .nav__mobile-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav__mobile-link.is-active {
+  color: var(--color-honey-soft);
+}
+.nav__mobile-index {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-honey);
+  letter-spacing: var(--ls-wide);
+}
+
+.nav__mobile-foot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  color: var(--color-honey-soft);
+  font-weight: 500;
+}
+.nav__mobile-foot a:hover {
+  color: var(--text-on-dark);
+}
+
+/* --- Breakpoints --- */
+@media (min-width: 960px) {
+  .nav__links {
+    display: flex;
+  }
+  .nav__burger {
+    display: none;
+  }
+  .nav__mobile {
+    display: none;
+  }
+}

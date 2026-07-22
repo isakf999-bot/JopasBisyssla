@@ -1,0 +1,181 @@
+/* Produktrader */
+.products__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+.prod-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  align-items: center;
+}
+.prod-row__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.prod-row__season {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-honey-strong);
+}
+.prod-row__name {
+  font-size: var(--fs-2xl);
+}
+.prod-row__tag {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+.prod-row__desc {
+  color: var(--text-secondary);
+  max-width: 52ch;
+}
+.prod-row__notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: var(--space-2);
+}
+.prod-row__notes li {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--color-honey-strong);
+  background: rgba(230, 165, 42, 0.12);
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-pill);
+}
+
+@media (min-width: 820px) {
+  .prod-row {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-7);
+  }
+  .prod-row--rev .prod-row__media {
+    order: 2;
+  }
+}
+
+/* Tjänster */
+.products__services-section {
+  background: var(--bg-elevated);
+  border-block: 1px solid var(--border-subtle);
+}
+.products__services {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-honey-soft);
+}
+.service-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.service-card__title {
+  font-size: var(--fs-lg);
+}
+.service-card__badge {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.28rem 0.7rem;
+  border-radius: var(--radius-pill);
+  background: rgba(46, 125, 90, 0.14);
+  color: #2e7d5a;
+  white-space: nowrap;
+}
+.service-card__badge--coming {
+  background: rgba(176, 153, 123, 0.2);
+  color: var(--color-bark);
+}
+.service-card__text {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+}
+
+@media (min-width: 640px) {
+  .products__services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Köp-CTA */
+.products__buy {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.5rem, 6vw, 5rem);
+  background: var(--grad-honey);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+.products__buy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='96' viewBox='0 0 56 96'%3E%3Cg fill='none' stroke='%233c2c1c' stroke-opacity='0.14' stroke-width='2'%3E%3Cpath d='M28 0l24 14v28L28 56 4 42V14z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 56px 96px;
+  opacity: 0.6;
+}
+.products__buy-content {
+  position: relative;
+  max-width: 620px;
+  color: var(--color-bark);
+}
+.products__buy-content .eyebrow {
+  color: var(--color-bark);
+}
+.products__buy-content h2 {
+  color: var(--color-bark);
+  font-size: var(--fs-2xl);
+  margin-top: var(--space-3);
+}
+.products__buy-content p {
+  margin-top: var(--space-3);
+  color: rgba(60, 44, 28, 0.85);
+}
+.products__buy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+/* På honungsgul bakgrund: mörka, solida knappar för kontrast */
+.products__buy-actions .btn--primary {
+  background: var(--color-ink);
+  color: var(--text-on-dark);
+  box-shadow: var(--shadow-md);
+}
+.products__buy-actions .btn--primary:hover {
+  background: var(--color-bark);
+}
+.products__buy-actions .btn--secondary {
+  border-color: rgba(60, 44, 28, 0.4);
+  color: var(--color-bark);
+}
+.products__buy-actions .btn--secondary:hover {
+  background: var(--color-bark);
+  color: var(--text-on-dark);
+  border-color: var(--color-bark);
+}

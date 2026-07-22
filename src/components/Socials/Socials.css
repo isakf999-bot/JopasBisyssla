@@ -1,0 +1,44 @@
+.socials {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--color-honey-soft);
+  border: 1.5px solid rgba(243, 236, 214, 0.18);
+  background: rgba(243, 236, 214, 0.04);
+  transition: transform var(--dur) var(--ease-out),
+    background var(--dur) var(--ease-out), color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out);
+}
+
+.social svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+}
+
+.social__spark {
+  fill: currentColor;
+  stroke: none;
+}
+.social__fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.social:hover {
+  transform: translateY(-3px);
+  color: var(--color-bark);
+  background: var(--grad-honey);
+  border-color: transparent;
+  box-shadow: var(--shadow-honey);
+}

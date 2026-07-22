@@ -1,0 +1,26 @@
+.sec-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 640px;
+}
+
+.sec-head--center {
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.sec-head__title {
+  font-size: var(--fs-2xl);
+}
+
+.sec-head__desc {
+  margin-top: var(--space-1);
+}
+
+@media (min-width: 768px) {
+  .sec-head__title {
+    font-size: var(--fs-3xl);
+  }
+}

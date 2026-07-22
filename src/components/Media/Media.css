@@ -1,0 +1,92 @@
+.media {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-cream-deep);
+  box-shadow: var(--shadow-md);
+  isolation: isolate;
+}
+
+.media--r-md {
+  border-radius: var(--radius-md);
+}
+.media--r-lg {
+  border-radius: var(--radius-lg);
+}
+.media--r-xl {
+  border-radius: var(--radius-xl);
+}
+
+/* --- Craftad platshållare (bikake-mönster + bi + etikett) --- */
+.media__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  text-align: center;
+  background-color: var(--color-cream-deep);
+  background-image: linear-gradient(
+      135deg,
+      rgba(230, 165, 42, 0.16),
+      rgba(176, 153, 123, 0.12)
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='96' viewBox='0 0 56 96'%3E%3Cg fill='none' stroke='%23b0997b' stroke-opacity='0.35' stroke-width='2'%3E%3Cpath d='M28 0l24 14v28L28 56 4 42V14z'/%3E%3Cpath d='M0 48l24 14v28L0 104M56 48L32 62v28l24 14'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 56px 96px;
+}
+
+.media__bee {
+  width: 54px;
+  height: 54px;
+  color: var(--color-kraft);
+  opacity: 0.85;
+}
+.media__bee svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.media__bee ellipse {
+  fill: rgba(255, 255, 255, 0.5);
+}
+.media__bee .media__bee-body {
+  fill: rgba(230, 165, 42, 0.35);
+}
+
+.media__label {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-bark);
+  opacity: 0.65;
+  max-width: 80%;
+}
+
+/* --- Riktig bild --- */
+.media__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity var(--dur-slow) var(--ease-out),
+    transform 900ms var(--ease-out);
+}
+.media__img.is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* subtil zoom vid hover om bilden ligger i ett interaktivt kort */
+.media--hover:hover .media__img.is-loaded {
+  transform: scale(1.05);
+}

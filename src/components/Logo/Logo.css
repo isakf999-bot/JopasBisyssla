@@ -1,0 +1,125 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  line-height: 1;
+}
+
+/* ---- Riktig logga (bild) ---- */
+.logo__img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--dur) var(--ease-out);
+  transform-origin: center;
+}
+.logo:hover .logo__img {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.logo--sm .logo__img {
+  height: 42px;
+}
+.logo--md .logo__img {
+  height: 52px;
+}
+.logo--lg .logo__img {
+  height: 84px;
+}
+
+/* ---- Fallback-emblem (SVG) ---- */
+.logo__emblem {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  transition: transform var(--dur) var(--ease-out);
+}
+.logo:hover .logo__emblem {
+  transform: rotate(-6deg) scale(1.04);
+}
+.logo__emblem svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.logo--sm .logo__emblem {
+  width: 42px;
+  height: 42px;
+}
+.logo--lg .logo__emblem {
+  width: 60px;
+  height: 60px;
+}
+
+.logo__ring {
+  fill: var(--color-cream);
+  stroke: var(--color-ink);
+  stroke-width: 3;
+}
+.logo__body {
+  fill: var(--color-honey);
+  stroke: var(--color-ink);
+  stroke-width: 3;
+}
+.logo__wings ellipse {
+  fill: var(--color-white);
+  stroke: var(--color-ink);
+  stroke-width: 2;
+}
+.logo__stripes,
+.logo__antenna,
+.logo__smile {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.logo__antenna,
+.logo__smile {
+  stroke-width: 2;
+}
+.logo__eye {
+  fill: var(--color-ink);
+}
+.logo__dot {
+  fill: var(--color-clay);
+}
+
+/* ---- Ordmärke (fallback) ---- */
+.logo__wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.95;
+}
+.logo__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+.logo__sub {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.66rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--color-honey-strong);
+  padding-left: 2px;
+}
+
+/* ---- Ljus ton på mörk bakgrund ---- */
+.logo--light .logo__name {
+  color: var(--text-on-dark);
+}
+.logo--light .logo__ring {
+  fill: rgba(246, 239, 216, 0.12);
+  stroke: var(--color-honey-soft);
+}
+.logo--light .logo__wings ellipse {
+  fill: rgba(255, 255, 255, 0.9);
+  stroke: var(--color-honey-soft);
+}
+.logo--light .logo__body {
+  stroke: var(--color-honey-soft);
+}

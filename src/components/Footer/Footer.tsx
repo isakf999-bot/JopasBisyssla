@@ -1,0 +1,73 @@
+import { Link } from "react-router-dom";
+import Logo from "../Logo/Logo";
+import Socials from "../Socials/Socials";
+import { NAV_ITEMS, CONTACT } from "../../data/site";
+import "./Footer.css";
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="footer">
+      <div className="footer__glow" aria-hidden="true" />
+      <div className="container footer__inner">
+        <div className="footer__brand">
+          <Logo size="lg" tone="light" />
+          <p className="footer__tagline">
+            Småskalig biodling på Söderåsens sluttningar mot Hallandsåsen.
+            Honung hanterad på ett hantverksmässigt sätt – från blomma till burk.
+          </p>
+          <Socials className="footer__socials" />
+        </div>
+
+        <nav className="footer__col" aria-label="Sidfotsmeny">
+          <h3 className="footer__heading">Utforska</h3>
+          <ul>
+            {NAV_ITEMS.map((item) => (
+              <li key={item.to}>
+                <Link to={item.to} className="footer__link">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="footer__col">
+          <h3 className="footer__heading">Kontakt</h3>
+          <ul>
+            <li>
+              <a href={CONTACT.phoneHref} className="footer__link">
+                {CONTACT.phone}
+              </a>
+            </li>
+            <li>
+              <a href={CONTACT.emailHref} className="footer__link">
+                {CONTACT.email}
+              </a>
+            </li>
+            <li className="footer__muted">{CONTACT.region}</li>
+            <li className="footer__muted">{CONTACT.company}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="container footer__bottom">
+        <p>
+          © {year} {CONTACT.brand}. Producerad av{" "}
+          <a
+            href="https://isakweb.se"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="footer__credit"
+          >
+            IsakWeb
+          </a>
+        </p>
+        <p className="footer__made">
+          100% svensk honung · Skördad med omsorg
+        </p>
+      </div>
+    </footer>
+  );
+}
